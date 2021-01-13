@@ -1,13 +1,17 @@
 import unittest
-import calc 
+import calc
+# from calc import add, subtract, multiply, divide
+
+# assert(sum([1,2,3]), 6, 'Should equal 6')
+
 
 class TestCalc(unittest.TestCase):
 
     def test_add(self):
-        self.assertEqual(calc.add(10, 5), 15)
-        self.assertEqual(calc.add(100, 1), 101)
-        self.assertEqual(calc.add(-88, 88), 0)
-        self.assertEqual(calc.add(2, 2), 4)
+        self.assertEqual(calc.add(10, 5), 15, 'Should return 15')
+        self.assertEqual(calc.add(100, 1), 101, 'Should return 101')
+        self.assertEqual(calc.add(-88, 88), 0, 'Should return 0')
+        self.assertEqual(calc.add(2, 2), 4, 'Should return 4')
 
     def test_subtract(self):
         self.assertEqual(calc.subtract(10, 5), 5)
@@ -36,7 +40,12 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.multiply(100, 1), 100)
         self.assertEqual(calc.multiply(-88, 88), -7744)
         self.assertEqual(calc.multiply(2, 2), 4)
-    
+
 
 if __name__ == '__main__':
     unittest.main()
+
+
+# python3 test_calc.py    to run a test
+# python3 test_calc.py -v    gives more info for test
+# nose2 runs all tests in directory
